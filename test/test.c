@@ -13,6 +13,10 @@
 #include "../source/ft_toupper.c"
 #include "../source/ft_tolower.c"
 #include "../source/ft_strchr.c"
+#include "../source/ft_strrchr.c"
+#include "../source/ft_strncmp.c"
+#include "../source/ft_memchr.c"
+#include "../source/ft_memcmp.c"
 
 #include <ctype.h>
 #include <stdio.h>
@@ -238,41 +242,107 @@ int main(void)
 	printf("tolower('%c') = %c | ft_tolower('%c') = %c\n",tolowerTest3, tolower(tolowerTest3), tolowerTest3, ft_tolower(tolowerTest3));
 	printf("tolower('%c') = %c | ft_tolower('%c') = %c\n",tolowerTest4, tolower(tolowerTest4), tolowerTest4, ft_tolower(tolowerTest4));
 	printf("tolower('%c') = %c | ft_tolower('%c') = %c\n",tolowerTest5, tolower(tolowerTest5), tolowerTest5, ft_tolower(tolowerTest5));
-	//ft_tolower
+	//ft_strrchr
 	printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
 	printf("Test strchr\n");
 	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
-	char strchrTest[17] = "abcdefghijklmnop";
+	char strchrTest[17] = "abcdjpbcbad";
 	char strchrFind1 = 'a';
 	char strchrFind2 = 'z';
 	char strchrFind3 = 'c';
 	char strchrFind4 = 'j';
 	char strchrFind5 = 'p';
 	char strchrFind6 = '\0';
-	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+	printf("strchr(\"%s\", '%c') = %s\nft_strchr(\"%s\", '%c') = %s\n",
 		strchrTest, strchrFind1, strchr(strchrTest, strchrFind1),
 		strchrTest, strchrFind1, ft_strchr(strchrTest, strchrFind1)
 	);
-	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+	printf("strchr(\"%s\", '%c') = %s\nft_strchr(\"%s\", '%c') = %s\n",
 		strchrTest, strchrFind2, strchr(strchrTest, strchrFind2),
 		strchrTest, strchrFind2, ft_strchr(strchrTest, strchrFind2)
 	);
-	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+	printf("strchr(\"%s\", '%c') = %s\nft_strchr(\"%s\", '%c') = %s\n",
 		strchrTest, strchrFind3, strchr(strchrTest, strchrFind3),
 		strchrTest, strchrFind3, ft_strchr(strchrTest, strchrFind3)
 	);
-	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+	printf("strchr(\"%s\", '%c') = %s\nft_strchr(\"%s\", '%c') = %s\n",
 		strchrTest, strchrFind4, strchr(strchrTest, strchrFind4),
 		strchrTest, strchrFind4, ft_strchr(strchrTest, strchrFind4)
 	);
-	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+	printf("strchr(\"%s\", '%c') = %s\nft_strchr(\"%s\", '%c') = %s\n",
 		strchrTest, strchrFind5, strchr(strchrTest, strchrFind5),
 		strchrTest, strchrFind5, ft_strchr(strchrTest, strchrFind5)
 	);
-	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+	printf("strchr(\"%s\", '%c') = %s\nft_strchr(\"%s\", '%c') = %s\n",
 		strchrTest, strchrFind6, strchr(strchrTest, strchrFind6),
 		strchrTest, strchrFind6, ft_strchr(strchrTest, strchrFind6)
 	);
+
+	//ft_strrchr
+	printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("Test strrchr\n");
+	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	char strrchrTest[17] = "abcdjpbcbad";
+	char strrchrFind1 = 'a';
+	char strrchrFind2 = 'z';
+	char strrchrFind3 = 'c';
+	char strrchrFind4 = 'j';
+	char strrchrFind5 = 'p';
+	char strrchrFind6 = '\0';
+	printf("strrchr(\"%s\", '%c') = %s\nft_strrchr(\"%s\", '%c') = %s\n",
+		strrchrTest, strrchrFind1, strrchr(strrchrTest, strrchrFind1),
+		strrchrTest, strrchrFind1, ft_strrchr(strrchrTest, strrchrFind1)
+	);
+	printf("strrchr(\"%s\", '%c') = %s\nft_strrchr(\"%s\", '%c') = %s\n",
+		strrchrTest, strrchrFind2, strrchr(strrchrTest, strrchrFind2),
+		strrchrTest, strrchrFind2, ft_strrchr(strrchrTest, strrchrFind2)
+	);
+	printf("strrchr(\"%s\", '%c') = %s\nft_strrchr(\"%s\", '%c') = %s\n",
+		strrchrTest, strrchrFind3, strrchr(strrchrTest, strrchrFind3),
+		strrchrTest, strrchrFind3, ft_strrchr(strrchrTest, strrchrFind3)
+	);
+	printf("strrchr(\"%s\", '%c') = %s\nft_strrchr(\"%s\", '%c') = %s\n",
+		strrchrTest, strrchrFind4, strrchr(strrchrTest, strrchrFind4),
+		strrchrTest, strrchrFind4, ft_strrchr(strrchrTest, strrchrFind4)
+	);
+	printf("strrchr(\"%s\", '%c') = %s\nft_strrchr(\"%s\", '%c') = %s\n",
+		strrchrTest, strrchrFind5, strrchr(strrchrTest, strrchrFind5),
+		strrchrTest, strrchrFind5, ft_strrchr(strrchrTest, strrchrFind5)
+	);
+	printf("strrchr(\"%s\", '%c') = %s\nft_strrchr(\"%s\", '%c') = %s\n",
+		strrchrTest, strrchrFind6, strrchr(strrchrTest, strrchrFind6),
+		strrchrTest, strrchrFind6, ft_strrchr(strrchrTest, strrchrFind6)
+	);
+	//ft_strncmp
+	printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("Test strncmp\n");
+	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("strncmp = %d | ft_strncmp = %d\n", strncmp("abcdef", "abcdef", 0), ft_strncmp("abcdef", "abcdef", 0));
+	printf("strncmp = %d | ft_strncmp = %d\n", strncmp("accdef", "abcdef", 0), ft_strncmp("accdef", "abcdef", 0));
+	printf("strncmp = %d | ft_strncmp = %d\n", strncmp("adcdef", "abcdef", 0), ft_strncmp("adcdef", "abcdef", 0));
+	printf("strncmp = %d | ft_strncmp = %d\n", strncmp("abcdef", "abcdef", 2), ft_strncmp("abcdef", "abcdef", 2));
+	printf("strncmp = %d | ft_strncmp = %d\n", strncmp("accdef", "abcdef", 2), ft_strncmp("accdef", "abcdef", 2));
+	printf("strncmp = %d | ft_strncmp = %d\n", strncmp("adcdef", "abcdef", 2), ft_strncmp("adcdef", "abcdef", 2));
+	//ft_memchr
+	printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("Test memchr\n");
+	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("memchr = %s | ft_memchr = %s\n", memchr("abcdef", 'e', 0), ft_memchr("abcdef", 'e', 0));
+	printf("memchr = %s | ft_memchr = %s\n", memchr("abcdef", 'e', 1), ft_memchr("abcdef", 'e', 1));
+	printf("memchr = %s | ft_memchr = %s\n", memchr("abcdef", 'e', 2), ft_memchr("abcdef", 'e', 2));
+	printf("memchr = %s | ft_memchr = %s\n", memchr("abcdef", 'e', 3), ft_memchr("abcdef", 'e', 3));
+	printf("memchr = %s | ft_memchr = %s\n", memchr("abcdef", 'e', 4), ft_memchr("abcdef", 'e', 4));
+	printf("memchr = %s | ft_memchr = %s\n", memchr("abcdef", 'e', 5), ft_memchr("abcdef", 'e', 5));
+	//ft_memcmp
+	printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("Test memcmp\n");
+	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("memcmp = %d | ft_memcmp = %d\n", memcmp("abcdef", "abcdef", 0), ft_memcmp("abcdef", "abcdef", 0));
+	printf("memcmp = %d | ft_memcmp = %d\n", memcmp("accdef", "abcdef", 0), ft_memcmp("accdef", "abcdef", 0));
+	printf("memcmp = %d | ft_memcmp = %d\n", memcmp("adcdef", "abcdef", 0), ft_memcmp("adcdef", "abcdef", 0));
+	printf("memcmp = %d | ft_memcmp = %d\n", memcmp("abcdef", "abcdef", 2), ft_memcmp("abcdef", "abcdef", 2));
+	printf("memcmp = %d | ft_memcmp = %d\n", memcmp("accdef", "abcdef", 2), ft_memcmp("accdef", "abcdef", 2));
+	printf("memcmp = %d | ft_memcmp = %d\n", memcmp("adcdef", "abcdef", 2), ft_memcmp("adcdef", "abcdef", 2));
 }
 
 void printIntArr(int *arr, unsigned long size)
