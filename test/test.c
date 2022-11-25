@@ -18,6 +18,8 @@
 #include "../source/ft_memchr.c"
 #include "../source/ft_memcmp.c"
 #include "../source/ft_strnstr.c"
+#include "../source/ft_atoi.c"
+#include "../source/ft_calloc.c"
 
 #include <ctype.h>
 #include <stdio.h>
@@ -358,6 +360,25 @@ int main(void)
 	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "cde", 5),  ft_strnstr("abcdefg", "cde", 5));
 	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "def", 5),  ft_strnstr("abcdefg", "def", 5));
 	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "def", 6),  ft_strnstr("abcdefg", "def", 6));
+	//ft_strnstr
+	printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("Test atoi\n");
+	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("atoi = %d | ft_atoi = %d\n", atoi("-123"), ft_atoi("-123"));
+	printf("atoi = %d | ft_atoi = %d\n", atoi("--123"), ft_atoi("--123"));
+	printf("atoi = %d | ft_atoi = %d\n", atoi("++123"), ft_atoi("++123"));
+	printf("atoi = %d | ft_atoi = %d\n", atoi("  	 	-123"), ft_atoi("  	 	-123"));
+	//ft_calloc
+	printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("Test calloc\n");
+	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	int *callocArr1 = (int *)calloc(10, sizeof(int));
+	int *callocArr2 = (int *)ft_calloc(10, sizeof(int));
+	printIntArr(callocArr1, 10);
+	printf("\n");
+	printIntArr(callocArr2, 10);
+	printf("\n");
+	printf("calloc = %s | ft_calloc = %s\n", (char *)calloc(10, sizeof(int)), (char *)ft_calloc(10, sizeof(int)));
 }
 
 void printIntArr(int *arr, unsigned long size)
