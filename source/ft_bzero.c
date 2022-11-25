@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghyep <sanghyep@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 15:40:51 by sanghyep          #+#    #+#             */
-/*   Updated: 2022/11/24 15:40:53 by sanghyep         ###   ########.fr       */
+/*   Created: 2022/11/25 15:33:31 by sanghyep          #+#    #+#             */
+/*   Updated: 2022/11/25 15:33:35 by sanghyep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void	ft_bzero(void *s, unsigned long n) 
+void	ft_bzero(void *s, unsigned long n)
 {
 	char				*dest;
 	unsigned long		count;

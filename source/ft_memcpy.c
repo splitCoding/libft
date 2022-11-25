@@ -1,17 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanghyep <sanghyep@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 15:34:13 by sanghyep          #+#    #+#             */
-/*   Updated: 2022/11/25 15:34:15 by sanghyep         ###   ########.fr       */
+/*   Created: 2022/11/25 15:34:49 by sanghyep          #+#    #+#             */
+/*   Updated: 2022/11/25 15:34:51 by sanghyep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isascii(int c)
+
+void	*ft_memcpy(void *dst, void *src, long unsigned n)
 {
-	if (0 <= c && c <= 127)
-		return (1);
-	return (0);
+	long unsigned	count;
+
+	count = 0;
+	while (count < n)
+	{
+		*((char *)dst + count) = *((char *)src + count);
+		count++;
+	}
+	return (dst);
 }
