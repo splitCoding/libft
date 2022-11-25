@@ -12,6 +12,7 @@
 #include "../source/ft_strlcpy.c"
 #include "../source/ft_toupper.c"
 #include "../source/ft_tolower.c"
+#include "../source/ft_strchr.c"
 
 #include <ctype.h>
 #include <stdio.h>
@@ -237,6 +238,41 @@ int main(void)
 	printf("tolower('%c') = %c | ft_tolower('%c') = %c\n",tolowerTest3, tolower(tolowerTest3), tolowerTest3, ft_tolower(tolowerTest3));
 	printf("tolower('%c') = %c | ft_tolower('%c') = %c\n",tolowerTest4, tolower(tolowerTest4), tolowerTest4, ft_tolower(tolowerTest4));
 	printf("tolower('%c') = %c | ft_tolower('%c') = %c\n",tolowerTest5, tolower(tolowerTest5), tolowerTest5, ft_tolower(tolowerTest5));
+	//ft_tolower
+	printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("Test strchr\n");
+	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	char strchrTest[17] = "abcdefghijklmnop";
+	char strchrFind1 = 'a';
+	char strchrFind2 = 'z';
+	char strchrFind3 = 'c';
+	char strchrFind4 = 'j';
+	char strchrFind5 = 'p';
+	char strchrFind6 = '\0';
+	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+		strchrTest, strchrFind1, strchr(strchrTest, strchrFind1),
+		strchrTest, strchrFind1, ft_strchr(strchrTest, strchrFind1)
+	);
+	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+		strchrTest, strchrFind2, strchr(strchrTest, strchrFind2),
+		strchrTest, strchrFind2, ft_strchr(strchrTest, strchrFind2)
+	);
+	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+		strchrTest, strchrFind3, strchr(strchrTest, strchrFind3),
+		strchrTest, strchrFind3, ft_strchr(strchrTest, strchrFind3)
+	);
+	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+		strchrTest, strchrFind4, strchr(strchrTest, strchrFind4),
+		strchrTest, strchrFind4, ft_strchr(strchrTest, strchrFind4)
+	);
+	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+		strchrTest, strchrFind5, strchr(strchrTest, strchrFind5),
+		strchrTest, strchrFind5, ft_strchr(strchrTest, strchrFind5)
+	);
+	printf("strchr(\"%s\", '%c') = %s | ft_strchr(\"%s\", '%c') = %s\n",
+		strchrTest, strchrFind6, strchr(strchrTest, strchrFind6),
+		strchrTest, strchrFind6, ft_strchr(strchrTest, strchrFind6)
+	);
 }
 
 void printIntArr(int *arr, unsigned long size)
