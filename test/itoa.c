@@ -1,4 +1,4 @@
-int get_long_len(long num)
+static int get_long_len(long num)
 {
 	if(num < 0)
 		num *= -1;
