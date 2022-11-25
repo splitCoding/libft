@@ -17,6 +17,7 @@
 #include "../source/ft_strncmp.c"
 #include "../source/ft_memchr.c"
 #include "../source/ft_memcmp.c"
+#include "../source/ft_strnstr.c"
 
 #include <ctype.h>
 #include <stdio.h>
@@ -343,6 +344,20 @@ int main(void)
 	printf("memcmp = %d | ft_memcmp = %d\n", memcmp("abcdef", "abcdef", 2), ft_memcmp("abcdef", "abcdef", 2));
 	printf("memcmp = %d | ft_memcmp = %d\n", memcmp("accdef", "abcdef", 2), ft_memcmp("accdef", "abcdef", 2));
 	printf("memcmp = %d | ft_memcmp = %d\n", memcmp("adcdef", "abcdef", 2), ft_memcmp("adcdef", "abcdef", 2));
+	//ft_strnstr
+	printf("\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("Test strnstr\n");
+	printf("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n");
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "", 0),  ft_strnstr("abcdefg", "", 0));
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "a", 0),  ft_strnstr("abcdefg", "a", 0));
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "", 1),  ft_strnstr("abcdefg", "", 1));
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "abc", 3),  ft_strnstr("abcdefg", "abc", 3));
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "bcd", 3),  ft_strnstr("abcdefg", "bcd", 3));
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "bcd", 4),  ft_strnstr("abcdefg", "bcd", 4));
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "cde", 4),  ft_strnstr("abcdefg", "cde", 4));
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "cde", 5),  ft_strnstr("abcdefg", "cde", 5));
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "def", 5),  ft_strnstr("abcdefg", "def", 5));
+	printf("strnstr = %s | ft_strnstr = %s\n", strnstr("abcdefg", "def", 6),  ft_strnstr("abcdefg", "def", 6));
 }
 
 void printIntArr(int *arr, unsigned long size)

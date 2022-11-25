@@ -9,8 +9,7 @@
 /*   Updated: 2022/11/25 21:17:21 by sanghyep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void *ft_memchr(const void *s, int c, long unsigned n)
+void	*ft_memchr(const void *s, int c, long unsigned n)
 {
 	long unsigned	count;
 	char			*addr;
@@ -19,7 +18,7 @@ void *ft_memchr(const void *s, int c, long unsigned n)
 	count = 0;
 	while (count < n && *addr)
 	{
-		if(*addr == c)
+		if (*addr == c)
 			return (addr);
 		count++;
 		addr++;
