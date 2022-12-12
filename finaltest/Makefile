@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sanghyep <sanghyep@student.42seoul.kr>     +#+  +:+       +#+         #
+#    By: sanghyep <sanghyep@student.42seoul.k>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/12/22 14:44:25 by jseo              #+#    #+#              #
-#    Updated: 2022/12/11 14:59:27 by sanghyep         ###   ########seoul.kr   #
+#    Created: 2022/12/12 10:52:13 by sanghyep          #+#    #+#              #
+#    Updated: 2022/12/12 17:44:03 by sanghyep         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,33 +51,39 @@ SRCS		= ft_isalpha.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c 
 
-BONUS_SRCS 	= ft_lstnew.c \
-			ft_lstadd_front.c \
-			ft_lstsize.c \
-			ft_lstlast.c \
-			ft_lstadd_back.c \
-			ft_lstdelone.c \
-			ft_lstclear.c \
-			ft_lstiter.c \
-			ft_lstmap.c
+BONUS_SRCS 	= ft_lstnew_bonus.c \
+			ft_lstadd_front_bonus.c \
+			ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c \
+			ft_lstadd_back_bonus.c \
+			ft_lstdelone_bonus.c \
+			ft_lstclear_bonus.c \
+			ft_lstiter_bonus.c \
+			ft_lstmap_bonus.c
 
 OBJS 		= $(SRCS:%.c=%.o)
 
 BONUS_OBJS 	= $(BONUS_SRCS:%.c=%.o)
 
-.c.o 		:
-			$(CC) $(FLAGS) -c $< -o $@  -I $(HEADER)
+ifdef BONUS
+	ALLOBJS = $(OBJS) $(BONUS_OBJS)
+else
+	ALLOBJS = $(OBJS)
+endif
 
 HEADER 		= "libft.h"
 
+.c.o 		:
+			$(CC) $(FLAGS) -c $< -o $@  -I $(HEADER)
+
 all	:	$(NAME)
 
-$(NAME)		:	$(OBJS)
-			ar rc $(NAME) $(OBJS)
+$(NAME)		:	$(ALLOBJS)
+			ar rc $(NAME) $(ALLOBJS)
 
-
-bonus		:	$(BONUS_OBJS) $(OBJS)
-			ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus		:
+			sleep 1
+			make BONUS=1 all
 
 clean		:
 			rm -f $(OBJS) $(BONUS_OBJS)
