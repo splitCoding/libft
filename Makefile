@@ -1,50 +1,94 @@
-NAME	= libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sanghyep <sanghyep@student.42seoul.k>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/12/12 10:52:13 by sanghyep          #+#    #+#              #
+#    Updated: 2022/12/13 12:03:14 by sanghyep         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# CC		= cc
-# CFLAGS	= -Wall -Wextra -Werror
+CC 			= cc
 
-# INC		= ./libft.h
-SRCS	= 	./source/ft_isalpha.c 
-			./source/ft_isdigit.c
-			./source/ft_isalnum.c
-			./source/ft_isascii.c
-			./source/ft_isprint.c
-			./source/ft_strlen.c
-			./source/ft_memset.c
-			./source/ft_bzero.c
-			./source/ft_memcpy.c
-			./source/ft_memmove.c
-			./source/ft_strlcpy.c
-			./source/ft_strlcat.c
-			./source/ft_toupper.c
-			./source/ft_tolower.c
-			./source/ft_strchr.c
-			./source/ft_strrchr.c
-			./source/ft_strncmp.cc
-			./source/ft_memchr.c
-			./source/ft_memcmp.c
-			./source/ft_strnstr.c
-			./source/ft_atoi.c
-			./source/ft_calloc.c
-			./source/ft_strdup.c
+FLAGS 		= -Wall -Wextra -Werror
 
-# all		: $(NAME)
+NAME		= libft.a
 
-OBJS	: $(SRCS:.c=.o)
+SRCS		= ft_isalpha.c \
+			ft_isdigit.c \
+			ft_isalnum.c \
+			ft_isascii.c \
+			ft_isprint.c \
+			ft_strlen.c \
+			ft_memset.c \
+			ft_bzero.c \
+			ft_memcpy.c \
+			ft_memmove.c \
+			ft_strlcpy.c \
+			ft_strlcat.c \
+			ft_strncmp.c \
+			ft_toupper.c \
+			ft_tolower.c \
+			ft_strchr.c \
+			ft_strrchr.c \
+			ft_memchr.c \
+			ft_memcmp.c \
+			ft_strnstr.c \
+			ft_atoi.c \
+			ft_calloc.c \
+			ft_strdup.c \
+			ft_substr.c \
+			ft_strjoin.c \
+			ft_strtrim.c \
+			ft_split.c \
+			ft_itoa.c \
+			ft_strmapi.c \
+			ft_striteri.c \
+			ft_putchar_fd.c \
+			ft_putstr_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c 
 
-%.o		: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+BONUS_SRCS 	= ft_lstnew_bonus.c \
+			ft_lstadd_front_bonus.c \
+			ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c \
+			ft_lstadd_back_bonus.c \
+			ft_lstdelone_bonus.c \
+			ft_lstclear_bonus.c \
+			ft_lstiter_bonus.c \
+			ft_lstmap_bonus.c
 
+OBJS 		= $(SRCS:%.c=%.o)
 
-clean	:
-	rm $(OBJS)
+BONUS_OBJS 	= $(BONUS_SRCS:%.c=%.o)
 
-# fclean	: clean
-# 	rm $(NAME)
+ifdef BONUS
+	ALLOBJS = $(OBJS) $(BONUS_OBJS)
+else
+	ALLOBJS = $(OBJS)
+endif
 
-# re		: fclean all
+HEADER 		= "libft.h"
 
-$(NAME)	: $(OBJS)
-	ar -src $@ $^
+.c.o 		:
+			$(CC) $(FLAGS) -c $< -o $@  -I $(HEADER)
 
-# .PHONY	: all bonus clean fclean re
+all			:	$(NAME)
+			sleep 1
+
+$(NAME)		:	$(ALLOBJS)
+			ar rc $(NAME) $(ALLOBJS)
+
+bonus		:
+			make BONUS=1 all
+
+clean		:
+			rm -f $(OBJS) $(BONUS_OBJS)
+
+fclean		:	clean
+			rm -f $(NAME)
+
+re			:	fclean all
