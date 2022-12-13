@@ -6,7 +6,7 @@
 #    By: sanghyep <sanghyep@student.42seoul.k>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 10:52:13 by sanghyep          #+#    #+#              #
-#    Updated: 2022/12/13 12:03:14 by sanghyep         ###   ########.fr        #
+#    Updated: 2022/12/13 12:30:01 by sanghyep         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,6 @@ HEADER 		= "libft.h"
 			$(CC) $(FLAGS) -c $< -o $@  -I $(HEADER)
 
 all			:	$(NAME)
-			sleep 1
 
 $(NAME)		:	$(ALLOBJS)
 			ar rc $(NAME) $(ALLOBJS)
