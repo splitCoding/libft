@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sanghyep <sanghyep@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: sanghyep <sanghyep@student.42seoul.k>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 10:36:51 by sanghyep          #+#    #+#             */
-/*   Updated: 2022/12/11 13:17:33 by sanghyep         ###   ########seoul.kr  */
+/*   Updated: 2022/12/13 11:54:37 by sanghyep         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ static int	get_number_len(int n)
 
 	len = 0;
 	if (n <= 0)
-	{
-		n *= -1;
 		len++;
-	}
 	while (n != 0)
 	{
 		n /= 10;
